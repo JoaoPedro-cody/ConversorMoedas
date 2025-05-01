@@ -6,7 +6,7 @@ public class Main {
         Moedas moedas= new Moedas();
 
         String menu =
-        "**************************************" +
+        "*****************************************" +
         "\nSejam bem-vindo/a ao Conversor de Moedas\n" +
         "\n1) Dólar =>> Peso Argentino\n" +
         "2) Peso Argentino =>> Dólar\n" +
@@ -24,7 +24,7 @@ public class Main {
             if (n == 7){
                 break;
             }
-            System.out.println("**************************************\n");
+            System.out.println("*****************************************\n");
             System.out.print("Digite o valor: ");
             double m = sc.nextDouble();
             System.out.println();
