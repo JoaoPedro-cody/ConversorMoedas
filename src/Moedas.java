@@ -1,13 +1,4 @@
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Moedas {
-    private double usd;
     private double brl;
     private double ars;
     private double bob;
@@ -15,14 +6,13 @@ public class Moedas {
     public Moedas() {
     }
 
-    public Moedas(double usd, double brl, double ars, double bob) {
-        this.usd = usd ;
+    public Moedas(double brl, double ars, double bob) {
         this.brl = brl;
         this.ars = ars;
         this.bob = bob;
     }
 
-    public String calculaMoeda(int n, double m) throws IOException, InterruptedException {
+    public String calculaMoeda(int n, double m){
         double produto;
         ConsultaAPI c = new ConsultaAPI();
 

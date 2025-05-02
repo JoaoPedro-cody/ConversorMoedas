@@ -1,8 +1,7 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Moedas moedas= new Moedas();
 
@@ -22,9 +21,7 @@ public class Main {
         while (n != 7){
             System.out.print(menu);
             n = sc.nextInt();
-            if (n == 7){
-                break;
-            }
+            if (n == 7){break;}
             System.out.println("*****************************************\n");
             System.out.print("Digite o valor: ");
             double m = sc.nextDouble();
