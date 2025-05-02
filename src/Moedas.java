@@ -1,38 +1,56 @@
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Moedas {
     private double usd;
     private double brl;
-    private double bob;
     private double ars;
-    private double cpl;
+    private double bob;
 
     public Moedas() {
     }
 
-    public String calculaMoeda(int n, double m){
+    public Moedas(double usd, double brl, double ars, double bob) {
+        this.usd = usd ;
+        this.brl = brl;
+        this.ars = ars;
+        this.bob = bob;
+    }
+
+    public String calculaMoeda(int n, double m) throws IOException, InterruptedException {
         double produto;
+        ConsultaAPI c = new ConsultaAPI();
+
+        Moedas mo = c.consulta();
+
         return switch (n) {
             case 1 -> {
-                produto = m * 1169.91;
+                produto = m * mo.ars;
                 yield "Valor " + m + "[USD] corresponde ao valor final de =>>>" + produto + "[ARS]";
             }
             case 2 -> {
-                produto = m * 0.00085;
+                produto = m / mo.ars;
                 yield "Valor " + m + "[ARS] corresponde ao valor final de =>>>" + produto + "[USD]";
             }
             case 3 -> {
-                produto = m * 5.68;
+                produto = m * mo.brl;
                 yield "Valor " + m + "[USD] corresponde ao valor final de =>>>" + produto + "[BRl]";
             }
             case 4 -> {
-                produto = m * 0.18;
+                produto = m / mo.brl;
                 yield "Valor " + m + "[BRL] corresponde ao valor final de =>>>" + produto + "[USD]";
             }
             case 5 -> {
-                produto = m + 4210.72;
+                produto = m * mo.bob;
                 yield "Valor " + m + "[USD] corresponde ao valor final de =>>>" + produto + "[BOB]";
             }
             case 6 -> {
-                produto = m * 0.00024;
+                produto = m / mo.bob;
                 yield "Valor " + m + "[BOB] corresponde ao valor final de =>>>" + produto + "[USD]";
             }
             default -> "Opção Inválida";
