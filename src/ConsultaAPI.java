@@ -29,10 +29,10 @@ public class ConsultaAPI {
         JsonObject conversionRates = root.getAsJsonObject("conversion_rates");
 
         double brl = conversionRates.get("BRL").getAsDouble();
-        double bob = conversionRates.get("COP").getAsDouble();
+        double cop = conversionRates.get("COP").getAsDouble();
         double ars = conversionRates.get("ARS").getAsDouble();
         double usd = 1.0;
 
-        return new Moedas(brl, ars, bob);
+        return new Moedas(brl, ars, cop);
     }
 }
