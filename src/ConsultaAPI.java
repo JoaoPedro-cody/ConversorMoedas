@@ -31,7 +31,6 @@ public class ConsultaAPI {
         double brl = conversionRates.get("BRL").getAsDouble();
         double cop = conversionRates.get("COP").getAsDouble();
         double ars = conversionRates.get("ARS").getAsDouble();
-        double usd = 1.0;
 
         return new Moedas(brl, ars, cop);
     }
