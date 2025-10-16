@@ -14,6 +14,7 @@ Projeto simples de conversão de moedas desenvolvido em Java, utilizando uma API
 - Java 17+
 - API ExchangeRate (https://v6.exchangerate-api.com/)
 - IDE utilizada: IntelliJ IDEA
+- Librarys: Gson
 
 ## Exemplo
 
@@ -26,7 +27,7 @@ Sejam bem-vindo/a ao Conversor de Moedas
 4) Real Brasileiro =>> Dólar
 5) Dólar =>> Peso Colombiano
 6) Peso Colombiano =>> Dólar
-7) Sair
+8) Sair
 Escolha um opção válida: 1
 *****************************************
 
